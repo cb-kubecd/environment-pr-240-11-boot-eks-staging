@@ -1,0 +1,41 @@
+
+Showing logs for build [32mcb-kubecd-environment-pr-240-11-xfjvb-2[0m stage [32mfrom-build-pack[0m and container [32mstep-credential-initializer-l7r7n[0m
+{"level":"info","ts":1592796318.6608102,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/refs/heads/0.8.0-ns-support: no such file or directory"}
+{"level":"info","ts":1592796318.6611736,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+
+Showing logs for build [32mcb-kubecd-environment-pr-240-11-xfjvb-2[0m stage [32mfrom-build-pack[0m and container [32mstep-working-dir-initializer-d7n6c[0m
+{"level":"info","ts":1592796319.6076236,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1592796319.6084,"logger":"fallback-logger","caller":"bash/main.go:64","msg":"Successfully executed command \"sh -c mkdir -p /workspace/source\"; output "}
+
+Showing logs for build [32mcb-kubecd-environment-pr-240-11-xfjvb-2[0m stage [32mfrom-build-pack[0m and container [32mstep-place-tools[0m
+
+Showing logs for build [32mcb-kubecd-environment-pr-240-11-xfjvb-2[0m stage [32mfrom-build-pack[0m and container [32mstep-git-source-cb-kubecd-environment-pr-240-11-xfjvb-cflvz[0m
+{"level":"info","ts":1592796324.8288715,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/refs/heads/0.8.0-ns-support: no such file or directory"}
+{"level":"info","ts":1592796325.0344622,"logger":"fallback-logger","caller":"git/git.go:103","msg":"Successfully cloned https://github.com/cb-kubecd/environment-pr-240-11-boot-eks-staging.git @ v0.0.2 in path /workspace/source"}
+
+Showing logs for build [32mcb-kubecd-environment-pr-240-11-xfjvb-2[0m stage [32mfrom-build-pack[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:697e26ea3a4f5d97fd798879d1fc4b918572f4dc
+WARNING: no SHAs to merge, falling back to initial cloned commit
+
+Showing logs for build [32mcb-kubecd-environment-pr-240-11-xfjvb-2[0m stage [32mfrom-build-pack[0m and container [32mstep-setup-jx-git-credentials[0m
+Generated Git credentials file /builder/home/git/credentials
+
+Showing logs for build [32mcb-kubecd-environment-pr-240-11-xfjvb-2[0m stage [32mfrom-build-pack[0m and container [32mstep-build-helm-apply[0m
+Modified file /workspace/source/env/Chart.yaml to set the chart to version 2
+creating the lock configmap **-lock-**-staging
+lock configmap **-lock-**-staging created
+cleaning the lock configmap **-lock-**-staging
+error: fetching secrets files from vault: retrieving the system Vault: getting Vault authentication token: auth with kubernetes login: Error making API request.
+
+URL: PUT http://vault-**.35.172.90.115.nip.io/v1/auth/kubernetes/login
+Code: 503. Raw Message:
+
+<html>
+<head><title>503 Service Temporarily Unavailable</title></head>
+<body>
+<center><h1>503 Service Temporarily Unavailable</h1></center>
+<hr><center>nginx/1.17.8</center>
+</body>
+</html>
+[31m
+Pipeline failed on stage 'from-build-pack' : container 'step-build-helm-apply'. The execution of the pipeline has stopped.[0m
